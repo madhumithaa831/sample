@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+#grad1 {
+  height: 200px;
+  background-image: linear-gradient(to bottom right, #97F7F0, #F1A8ED);
+}
+</style>
+<script>
+function validateForm() {
+  const x = document.forms["registration"]["First"].value;
+  if (x == "") {
+    alert("Firstname must be filled out");
+    return false;
+  }
+  const y = document.forms["registration"]["Last"].value;
+  if (y == "") {
+    alert("Lastname must be filled out");
+    return false;
+  }
+  if(!document.getElementById("gender").checked){
+   alert("Gender must be filled out");
+   return false;
+  }
+  alert("Registered Successfully");
+}
+</script>
+</head>
+<body id="grad1">
+<h1 align="center">Registration Form</h1>
+<form name="registration" id="registration" onsubmit="return validateForm()">
+<br>
+<table align="center" border="1px">
+<tr>
+<td><h3>First Name</h3></td>
+<td colspan="2"><input type="text" name="First"></td>
+</tr>
+<tr>
+<td><h3>Last Name</h3></td>
+<td colspan="2"><input type="text" name="Last"></td>
+</tr>
+<tr>
+<td><h3>Gender</h3></td>
+<td><input type="radio" id="gender" name="Female">Female</td>
+<td><input type="radio" id="gender" name="Male">Male</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><br><input type="Submit" height="2"><br></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
